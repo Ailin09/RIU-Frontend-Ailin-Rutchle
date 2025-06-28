@@ -1,0 +1,25 @@
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="neonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00aeff" stop-opacity="1" />
+      <stop offset="100%" stop-color="#0ff" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="75" cy="75" r="70" fill="url(#neonGlow)" filter="url(#glow)" />
+  <polygon points="75,10 130,40 130,110 75,140 20,110 20,40"
+           stroke="#ffffff"
+           stroke-width="2"
+           fill="none"
+           filter="url(#glow)" />
+  <path d="M80 30 L65 70 H85 L60 120 L75 80 H55 Z"
+        fill="#00aeff"
+        filter="url(#glow)" />
+
+</svg>
