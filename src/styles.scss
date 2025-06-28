@@ -1,4 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'neon-theme' as *;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #0a0f1c;
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(0, 174, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      45deg,
+      rgba(0, 174, 255, 0.05) 1px,
+      transparent 1px
+    );
+  background-size: 80px 80px;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #00aaff55 0%, transparent 70%);
+  animation: pulseGlow 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: 
+    radial-gradient(#00bfff 1px, transparent 1px),
+    radial-gradient(#00bfff44 1px, transparent 1px);
+  background-size: 100px 100px, 150px 150px;
+  animation: floatParticles 60s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes floatParticles {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px, -1000px 500px;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes pulseGlowAlt {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.25);
+  }
+}
+
+
+section {
+  margin-top: 2rem;
+}
+

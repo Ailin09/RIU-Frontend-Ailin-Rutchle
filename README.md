@@ -1,27 +1,50 @@
-# RiuFrontendAilinRutchle
+# 👋 Hola, soy Ailín Rutchle
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+Tech Lead Frontend Developer apasionada por construir experiencias digitales accesibles, eficientes y con impacto real.  
+Esta es mi propuesta para la prueba técnica de Mindata: una SPA desarrollada con Angular para gestionar superhéroes, siguiendo buenas prácticas de código, UI y arquitectura.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 💡 Sobre mí
 
-## Code scaffolding
+Soy una persona que cree en el poder de la colaboración, el aprendizaje continuo y la mejora constante.  
+Me especializo en frontend, pero me involucro en todo el proceso de diseño y desarrollo para lograr productos sólidos, funcionales y orientados a las personas.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Me gusta trabajar en equipo, escribir código claro y escalar soluciones sin perder de vista los detalles.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📌 Esta prueba me permitió
 
-## Running unit tests
+- Aplicar buenas prácticas en Angular 18 con componentes standalone y Signals.
+- Organizar un código mantenible, testeable y reutilizable.
+- Diseñar una experiencia fluida para gestión de datos: paginado, filtrado, formularios dinámicos, validaciones y feedback claro.
+- Documentar decisiones técnicas con foco en claridad y propósito.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🧪 ¿Qué incluye la app?
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- SPA 100% funcional en Angular 18
+- Gestión completa de CRUD con paginación y búsqueda
+- Formularios reactivos con validaciones
+- Eliminación segura con confirmación
+- Tests unitarios de servicios y componentes
+- Estilos con Angular Material y SCSS modular
+- Uso de `in-memory-web-api` como backend simulado
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📰 También escribo sobre tecnología y liderazgo
+
+✨ Cada semana comparto pensamientos y aprendizajes en mi newsletter:  
+[**Debugging Life: Tech & Reflex**](https://www.linkedin.com/newsletters/7269106281129422850/) — tecnología, equipo y autoconocimiento.
+
+---
+
+## 🤝 Gracias por leer
+
+Esta prueba es más que una demo técnica: es una pequeña muestra de cómo encaro los desafíos, cómo escribo código y cómo me comunico.  
+Estoy abierta a feedback, propuestas o simplemente a conectar con quienes compartimos la pasión por crear productos bien hechos.
+
+---
