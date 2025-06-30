@@ -12,6 +12,6 @@ import { AppLoaderComponent } from './shared/app-loader/app-loader.component';
   `
 })
 export class AppComponent {
-
+title = 'riu-frontend-ailin-rutchle';
  
 }
