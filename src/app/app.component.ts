@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { register } from 'swiper/element/bundle';
+import { AppLoaderComponent } from './shared/app-loader/app-loader.component';
 
-register();
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [RouterOutlet, AppLoaderComponent], 
+  template: `
+    <app-loader /> 
+    <router-outlet />
+  `
 })
 export class AppComponent {
-  title = 'riu-frontend-ailin-rutchle';
+
+ 
 }
