@@ -1,0 +1,22 @@
+@use 'neon-theme' as *;
+
+.modal-neon-container {
+  background: $bg-dark;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 0 20px $neon-blue-33;
+  border: 2px solid $neon-blue-20;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  color: $neon-white;
+}
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+
+  button {
+    min-width: 120px;
+  }
+}

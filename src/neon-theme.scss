@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap");
 
 $neon-blue: #00aeff;
 $neon-white: #ffffff;
@@ -13,36 +13,36 @@ $neon-blue-88: rgba($neon-blue, 0.88);
 
 body {
   background-color: $bg-dark;
-  font-family: 'Orbitron', 'Montserrat', sans-serif;
+  font-family: "Orbitron", "Montserrat", sans-serif;
   color: #e6faff;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: $neon-blue;
   text-shadow: 0 0 10px $neon-blue, 0 0 2px $neon-white;
   font-weight: 600;
 }
 
-button, .btn {
-  font-family: 'Orbitron', sans-serif;
+button,
+.btn {
+  font-family: "Orbitron", sans-serif;
   text-transform: uppercase;
   border-radius: 30px;
   cursor: pointer;
 }
 .neon-title {
-  font-family: 'Orbitron', sans-serif !important;
-  font-size: 2rem;
+  font-family: "Orbitron", sans-serif !important;
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 0 0 10px #00aeff, 0 0 2px #ffffff;
-  margin: 2.5rem 0 1.5rem 2vw ;
   display: inline-block;
   position: relative;
-
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: 0;
@@ -53,29 +53,23 @@ button, .btn {
   }
 }
 
-
-
 .neon-primary {
   color: $neon-blue;
   border: 2px solid $neon-blue;
   border-radius: 9999px;
   padding: 0.6rem 1.8rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   text-transform: uppercase;
   background: rgba(0, 174, 255, 0.07);
   text-shadow: 0 0 8px $neon-blue;
-  box-shadow:
-    0 0 8px $neon-blue,
-    0 0 16px $neon-blue-66,
+  box-shadow: 0 0 8px $neon-blue, 0 0 16px $neon-blue-66,
     inset 0 0 12px $neon-blue-33;
 
   transition: all 0.3s ease-in-out;
 
   &:hover {
     background: rgba(0, 174, 255, 0.2);
-    box-shadow:
-      0 0 12px $neon-white,
-      0 0 24px $neon-blue;
+    box-shadow: 0 0 12px $neon-white, 0 0 24px $neon-blue;
     color: $neon-white;
     text-shadow: 0 0 12px $neon-white;
   }
@@ -91,21 +85,20 @@ button, .btn {
   }
 }
 
-
 .neon-header {
   background: transparent !important;
   border-bottom: 1px solid $neon-blue-66;
   box-shadow: 0 0 16px $neon-blue-88;
-  padding: 1rem 2rem  ;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   color: $neon-white;
   position: sticky;
   top: 0;
   z-index: 100;
-    backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background-color: rgba(10, 13, 23, 0.75) !important;
   transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
 
@@ -120,7 +113,7 @@ button, .btn {
   border: 2px solid $neon-white;
   border-radius: 9999px;
   padding: 0.5rem 1.5rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   text-transform: uppercase;
   background: transparent;
   text-shadow: 0 0 5px $neon-white;
@@ -164,8 +157,6 @@ button, .btn {
   text-shadow: 0 0 8px $neon-white, 0 0 16px $neon-blue;
 }
 
-
-
 :host ::ng-deep .mat-form-field-flex {
   border: 1px solid $neon-blue-66;
   border-radius: 12px;
@@ -181,13 +172,12 @@ button, .btn {
 
 :host ::ng-deep .mat-paginator {
   color: white;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid $neon-blue-33;
   border-radius: 12px;
   box-shadow: 0 0 12px $neon-blue-44;
 }
-
 
 .neon-watch-blue {
   display: inline-flex;
@@ -197,7 +187,7 @@ button, .btn {
 
   position: relative;
   padding: 0.75rem 2.5rem 0.75rem 3.2rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -206,15 +196,13 @@ button, .btn {
   border: none;
   cursor: pointer;
 
-  box-shadow:
-    0 0 12px $neon-blue,
-    inset 0 0 8px rgba(0, 200, 255, 0.4);
+  box-shadow: 0 0 12px $neon-blue, inset 0 0 8px rgba(0, 200, 255, 0.4);
 
   text-shadow: 0 0 6px $neon-blue;
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -248,11 +236,19 @@ button, .btn {
     color: inherit;
     text-shadow: inherit;
   }
+
+  &:disabled {
+    background-color: #00ffff22;
+    color: #666;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 .mat-mdc-paginator {
   background-color: rgba(0, 174, 255, 0.07) !important;
   color: #00aeff !important;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   border-radius: 12px;
   box-shadow: 0 0 16px rgba(0, 174, 255, 0.33);
   border: 1px solid rgba(0, 174, 255, 0.3);
@@ -261,7 +257,7 @@ button, .btn {
 
 .mat-mdc-paginator-container {
   color: #00aeff !important;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 .mat-mdc-paginator-range-actions .mat-mdc-icon-button {
@@ -278,9 +274,9 @@ button, .btn {
 
 .mat-mdc-select-value {
   color: #e6faff !important;
-  font-family: 'Orbitron', sans-serif!important;
-  font-weight: 500!important;
-  text-shadow: 0 0 6px #00aeff!important;
+  font-family: "Orbitron", sans-serif !important;
+  font-weight: 500 !important;
+  text-shadow: 0 0 6px #00aeff !important;
 }
 
 .mat-mdc-select-arrow {
@@ -288,29 +284,29 @@ button, .btn {
 }
 
 .mat-mdc-select-panel {
-  background-color: rgba(10, 13, 23, 0.95)!important;
-  color: 00aeff!important;
-  font-family: 'Orbitron', sans-serif!important;
-  box-shadow: 0 0 20px rgba(0, 174, 255, 0.33)!important;
-  border: 1px solid rgba(0, 174, 255, 0.3)!important;
+  background-color: rgba(10, 13, 23, 0.95) !important;
+  color: 00aeff !important;
+  font-family: "Orbitron", sans-serif !important;
+  box-shadow: 0 0 20px rgba(0, 174, 255, 0.33) !important;
+  border: 1px solid rgba(0, 174, 255, 0.3) !important;
 }
 .mat-mdc-form-field {
-  transition: border-color 0.2s ease, box-shadow 0.2s ease!important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
 
   .mdc-notched-outline {
-    transition: border-color 0.2s ease, box-shadow 0.2s ease!important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
   }
 }
 .mat-mdc-form-field .mat-mdc-floating-label {
   color: #e6faff !important;
-  text-shadow: 0 0 6px #00aeff, 0 0 2px #ffffff!important;
-  font-weight: 500!important;
-  font-family: 'Orbitron', sans-serif !important
+  text-shadow: 0 0 6px #00aeff, 0 0 2px #ffffff !important;
+  font-weight: 500 !important;
+  font-family: "Orbitron", sans-serif !important;
 }
 .mat-mdc-select-panel {
   background-color: rgba(10, 13, 23, 0.95) !important;
   color: #e6faff;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   box-shadow: 0 0 20px rgba(0, 174, 255, 0.33);
   border: 1px solid rgba(0, 174, 255, 0.3);
 }
@@ -328,4 +324,11 @@ button, .btn {
   box-shadow: inset 0 0 6px rgba(0, 174, 255, 0.5);
   text-shadow: 0 0 8px #ffffff;
   color: #ffffff !important;
+}
+.mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input {
+  color: white !important;
+  text-shadow: 0 0 4px #00f0ff80;
+}
+.mat-mdc-text-field-wrapper:hover {
+  border: 1px solid $neon-blue !important;
 }

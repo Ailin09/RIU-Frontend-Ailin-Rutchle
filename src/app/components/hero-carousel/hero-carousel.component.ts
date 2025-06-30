@@ -11,6 +11,7 @@ register();
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   styleUrls: ['./hero-carousel.component.scss'],
   template: `
+  <h2 class="carousel-title">{{ title() }}</h2>
 <swiper-container
   effect="coverflow"
   grab-cursor="true"
@@ -27,14 +28,16 @@ register();
   }'
   [initial-slide]="getInitialSlide()"
   [breakpoints]="breakpoints"
-  loop="true"
+ 
   autoplay='{"delay":2400,"pauseOnMouseEnter":true}'
   class="custom-swiper"
 >
-  <h2 class="carousel-title">{{ title() }}</h2>
   @for (hero of heroes(); track hero.id) {
     <swiper-slide>
       <div class="hero-card">
+        @if (isNewHero(hero)) {
+        <div class="new-badge">NUEVO</div>
+        }
         <img class="hero-img" [src]="hero.images.lg" [alt]="hero.name" />
         <div class="card-info">
           <h3>{{ hero.name }}</h3>
@@ -47,6 +50,7 @@ register();
             <span class="stat-value">{{ hero.powerstats.strength }}</span>
           </div>
         </div>
+      
       </div>
     </swiper-slide>
   }
@@ -55,7 +59,7 @@ register();
 })
 export class HeroCarouselComponent {
   heroes = input<Superhero[]>(); 
-  title = input<string>('');
+  title = input<string>('Últimos héroes agregados');
 
   getSlidesPerView(): number {
     const w = window.innerWidth;
@@ -75,4 +79,11 @@ export class HeroCarouselComponent {
     const arr = this.heroes();
     return arr?.length ? Math.floor(arr.length / 2) : 0;
   }
+  isNewHero(hero: Superhero): boolean {
+  const created = new Date(hero.createdAt ?? 0).getTime();
+  const now = Date.now();
+  const oneDayMs = 24 * 60 * 60 * 1000;
+  return now - created < oneDayMs;
+}
+
 }

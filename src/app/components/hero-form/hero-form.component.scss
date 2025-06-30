@@ -1,0 +1,107 @@
+.hero-form {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+
+  mat-card {
+    width: 100%;
+    max-width: 1280px;
+    background-color: #0f182a;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 2rem;
+
+    mat-card-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+      margin-bottom: 30px;
+    }
+
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    mat-card-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+  }
+
+  .form-header-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .hero-image-preview-block {
+    border: 2px dashed #00ffff44;
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+
+    .image-clickable {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 260px;
+      border-radius: 12px;
+      background-color: #132542;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+
+      .image-placeholder {
+        color: #a6faff;
+        font-size: 1rem;
+        text-shadow: 0 0 6px #00ffff99;
+      }
+    }
+
+    mat-error {
+      margin-top: 0.5rem;
+      color: #ff6f61;
+      font-weight: 500;
+      display: block;
+    }
+  }
+
+  .hero-fields-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    mat-chip-row {
+      background-color: #00c8ff22;
+    }
+  }
+
+.form-section-title {
+  grid-column: 1 / -1;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00ffff;
+  margin-top: 1.5rem;
+  text-shadow: 0 0 8px #00ffffaa;
+}
+
+}

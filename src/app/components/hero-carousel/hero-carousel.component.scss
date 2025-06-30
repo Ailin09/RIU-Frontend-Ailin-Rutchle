@@ -3,13 +3,14 @@ $neon-blue: #00b3ff;
 .custom-swiper,
 swiper-container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1400px;
   overflow: visible !important;
   background: radial-gradient(circle at center, rgba(0, 179, 255, 0.05), transparent 70%) !important;
+  padding: 0 1rem;
 }
 
 swiper-slide {
-  width: 220px;
+  width: auto;
   height: 400px;
   overflow: visible !important;
   display: flex;
@@ -35,6 +36,7 @@ swiper-slide {
     0 0 24px rgba(0, 179, 255, 0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   margin-bottom: 150px;
+  position: relative;
 
   &:hover {
     transform: scale(1.04);
@@ -103,10 +105,26 @@ swiper-slide {
 
   .hero-card {
     max-width: 99vw;
+  position: relative;
+
   }
 
   .carousel-title {
     margin-left: 1vw;
     font-size: 1.25rem;
   }
+}
+.new-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: $neon-blue;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 179, 255, 0.7);
+  font-family: 'Orbitron', sans-serif;
+  z-index: 10;
 }

@@ -14,14 +14,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'8",
-        "203 cm"
-      ],
-      "weight": [
-        "980 lb",
-        "441 kg"
-      ],
       "eyeColor": "Yellow",
       "hairColor": "No Hair"
     },
@@ -67,14 +59,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Icthyo Sapien",
-      "height": [
-        "6'3",
-        "191 cm"
-      ],
-      "weight": [
-        "145 lb",
-        "65 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "No Hair"
     },
@@ -122,14 +106,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Ungaran",
-      "height": [
-        "6'1",
-        "185 cm"
-      ],
-      "weight": [
-        "200 lb",
-        "90 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "No Hair"
     },
@@ -175,14 +151,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human / Radiation",
-      "height": [
-        "6'8",
-        "203 cm"
-      ],
-      "weight": [
-        "980 lb",
-        "441 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "No Hair"
     },
@@ -229,14 +197,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Cosmic Entity",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -282,14 +242,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'4",
-        "193 cm"
-      ],
-      "weight": [
-        "270 lb",
-        "122 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "No Hair"
     },
@@ -340,14 +292,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -394,14 +338,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'1",
-        "185 cm"
-      ],
-      "weight": [
-        "195 lb",
-        "88 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -448,14 +384,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "5'10",
-        "178 cm"
-      ],
-      "weight": [
-        "181 lb",
-        "81 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Brown"
     },
@@ -504,14 +432,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'3",
-        "191 cm"
-      ],
-      "weight": [
-        "230 lb",
-        "104 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -557,14 +477,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'2",
-        "188 cm"
-      ],
-      "weight": [
-        "240 lb",
-        "108 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "White"
     },
@@ -610,14 +522,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Cyborg",
-      "height": [
-        "6'4",
-        "193 cm"
-      ],
-      "weight": [
-        "200 lb",
-        "90 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Black"
     },
@@ -665,14 +569,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "5'11",
-        "180 cm"
-      ],
-      "weight": [
-        "201 lb",
-        "90 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -720,14 +616,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -775,14 +663,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "5'10",
-        "178 cm"
-      ],
-      "weight": [
-        "160 lb",
-        "72 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -828,14 +708,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Xenomorph XX121",
-      "height": [
-        "8'0",
-        "244 cm"
-      ],
-      "weight": [
-        "375 lb",
-        "169 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "No Hair"
     },
@@ -881,14 +753,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Android",
-      "height": [
-        "8'5",
-        "257 cm"
-      ],
-      "weight": [
-        "385 lb",
-        "173 kg"
-      ],
       "eyeColor": "Red",
       "hairColor": "-"
     },
@@ -937,14 +801,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Vampire",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -991,14 +847,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "150 lb",
-        "68 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -1048,14 +896,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Mutant",
-      "height": [
-        "5'5",
-        "165 cm"
-      ],
-      "weight": [
-        "126 lb",
-        "57 kg"
-      ],
       "eyeColor": "Yellow",
       "hairColor": "Black"
     },
@@ -1102,14 +942,6 @@
     "appearance": {
       "gender": "Female",
       "race": null,
-      "height": [
-        "5'4",
-        "163 cm"
-      ],
-      "weight": [
-        "121 lb",
-        "54 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Black"
     },
@@ -1155,14 +987,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "185 lb",
-        "83 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -1208,14 +1032,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "5'11",
-        "180 cm"
-      ],
-      "weight": [
-        "200 lb",
-        "90 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "No Hair"
     },
@@ -1262,14 +1078,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'11",
-        "211 cm"
-      ],
-      "weight": [
-        "270 lb",
-        "122 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -1321,14 +1129,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "190 lb",
-        "86 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -1375,14 +1175,6 @@
     "appearance": {
       "gender": "Male",
       "race": "God / Eternal",
-      "height": [
-        "200",
-        "61.0 meters"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "Yellow",
       "hairColor": "No Hair"
     },
@@ -1429,14 +1221,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Symbiote",
-      "height": [
-        "7'6",
-        "229 cm"
-      ],
-      "weight": [
-        "795 lb",
-        "358 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -1487,14 +1271,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Mutant",
-      "height": [
-        "7'0",
-        "213 cm"
-      ],
-      "weight": [
-        "300 lb",
-        "135 kg"
-      ],
       "eyeColor": "Red",
       "hairColor": "Black"
     },
@@ -1545,14 +1321,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -1598,14 +1366,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Atlantean",
-      "height": [
-        "5'10",
-        "178 cm"
-      ],
-      "weight": [
-        "235 lb",
-        "106 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -1651,14 +1411,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Atlantean",
-      "height": [
-        "6'1",
-        "185 cm"
-      ],
-      "weight": [
-        "325 lb",
-        "146 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -1709,14 +1461,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Human",
-      "height": [
-        "5'9",
-        "175 cm"
-      ],
-      "weight": [
-        "140 lb",
-        "63 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -1763,14 +1507,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Mutant",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "150 lb",
-        "68 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -1819,14 +1555,6 @@
     "appearance": {
       "gender": "Female",
       "race": null,
-      "height": [
-        "5'8",
-        "173 cm"
-      ],
-      "weight": [
-        "126 lb",
-        "57 kg"
-      ],
       "eyeColor": "Violet",
       "hairColor": "Purple"
     },
@@ -1872,14 +1600,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Alien",
-      "height": [
-        "6'4",
-        "193 cm"
-      ],
-      "weight": [
-        "218 lb",
-        "98 kg"
-      ],
       "eyeColor": "White",
       "hairColor": "Orange"
     },
@@ -1925,14 +1645,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'1",
-        "185 cm"
-      ],
-      "weight": [
-        "600 lb",
-        "270 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Brown"
     },
@@ -1981,14 +1693,6 @@
     "appearance": {
       "gender": "Female",
       "race": null,
-      "height": [
-        "5'5",
-        "165 cm"
-      ],
-      "weight": [
-        "130 lb",
-        "59 kg"
-      ],
       "eyeColor": "Purple",
       "hairColor": "Pink"
     },
@@ -2034,14 +1738,6 @@
     "appearance": {
       "gender": "Female",
       "race": null,
-      "height": [
-        "5'4",
-        "163 cm"
-      ],
-      "weight": [
-        "112 lb",
-        "50 kg"
-      ],
       "eyeColor": "Black",
       "hairColor": "Black"
     },
@@ -2088,14 +1784,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Mutant",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "225 lb",
-        "101 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Red"
     },
@@ -2146,14 +1834,6 @@
     "appearance": {
       "gender": "Male",
       "race": "God / Eternal",
-      "height": [
-        "6'6",
-        "198 cm"
-      ],
-      "weight": [
-        "280 lb",
-        "126 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Brown"
     },
@@ -2200,14 +1880,6 @@
     "appearance": {
       "gender": "Female",
       "race": null,
-      "height": [
-        "5'6",
-        "168 cm"
-      ],
-      "weight": [
-        "120 lb",
-        "54 kg"
-      ],
       "eyeColor": "Black",
       "hairColor": "Black"
     },
@@ -2253,14 +1925,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "180 lb",
-        "81 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Auburn"
     },
@@ -2308,14 +1972,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Mutant",
-      "height": [
-        "5'11",
-        "180 cm"
-      ],
-      "weight": [
-        "140 lb",
-        "63 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -2361,14 +2017,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Neyaphem",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "149 lb",
-        "67 kg"
-      ],
       "eyeColor": "Yellow",
       "hairColor": "Black"
     },
@@ -2421,14 +2069,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Black"
     },
@@ -2474,14 +2114,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'8",
-        "203 cm"
-      ],
-      "weight": [
-        "400 lb",
-        "180 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -2527,14 +2159,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "170 lb",
-        "77 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Strawberry Blond"
     },
@@ -2580,14 +2204,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "5'5",
-        "165 cm"
-      ],
-      "weight": [
-        "119 lb",
-        "54 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Black"
     },
@@ -2633,14 +2249,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Human",
-      "height": [
-        "5'7",
-        "170 cm"
-      ],
-      "weight": [
-        "126 lb",
-        "57 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Red"
     },
@@ -2687,14 +2295,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Human",
-      "height": [
-        "5'5",
-        "165 cm"
-      ],
-      "weight": [
-        "115 lb",
-        "52 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Black"
     },
@@ -2741,14 +2341,6 @@
     "appearance": {
       "gender": "Female",
       "race": null,
-      "height": [
-        "5'6",
-        "168 cm"
-      ],
-      "weight": [
-        "135 lb",
-        "61 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -2797,14 +2389,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "5'10",
-        "178 cm"
-      ],
-      "weight": [
-        "170 lb",
-        "77 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -2854,14 +2438,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'2",
-        "188 cm"
-      ],
-      "weight": [
-        "210 lb",
-        "95 kg"
-      ],
       "eyeColor": "blue",
       "hairColor": "black"
     },
@@ -2908,14 +2484,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "5'10",
-        "178 cm"
-      ],
-      "weight": [
-        "175 lb",
-        "79 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -2961,14 +2529,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'6",
-        "198 cm"
-      ],
-      "weight": [
-        "295 lb",
-        "133 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Black"
     },
@@ -3014,14 +2574,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Human",
-      "height": [
-        "5'10",
-        "178 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Red"
     },
@@ -3067,14 +2619,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Mutant",
-      "height": [
-        "5'11",
-        "180 cm"
-      ],
-      "weight": [
-        "402 lb",
-        "181 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blue"
     },
@@ -3125,14 +2669,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "5'8",
-        "173 cm"
-      ],
-      "weight": [
-        "150 lb",
-        "68 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Green"
     },
@@ -3184,14 +2720,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -3237,14 +2765,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'7",
-        "201 cm"
-      ],
-      "weight": [
-        "480 lb",
-        "216 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "No Hair"
     },
@@ -3291,14 +2811,6 @@
     "appearance": {
       "gender": "Male",
       "race": "God / Eternal",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -3354,14 +2866,6 @@
     "appearance": {
       "gender": "Female",
       "race": "New God",
-      "height": [
-        "6'2",
-        "188 cm"
-      ],
-      "weight": [
-        "300 lb",
-        "135 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -3407,14 +2911,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -3459,14 +2955,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "5'5",
-        "165 cm"
-      ],
-      "weight": [
-        "157 lb",
-        "71 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Brown"
     },
@@ -3511,14 +2999,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Alpha",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -3563,14 +3043,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Cyborg",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -3615,14 +3087,6 @@
     "appearance": {
       "gender": "-",
       "race": null,
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -3667,14 +3131,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Mutant",
-      "height": [
-        "6'6",
-        "198 cm"
-      ],
-      "weight": [
-        "275 lb",
-        "124 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "No Hair"
     },
@@ -3719,14 +3175,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Bizarro",
-      "height": [
-        "6'3",
-        "191 cm"
-      ],
-      "weight": [
-        "345 lb",
-        "155 kg"
-      ],
       "eyeColor": "Black",
       "hairColor": "Black"
     },
@@ -3771,14 +3219,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'3",
-        "191 cm"
-      ],
-      "weight": [
-        "250 lb",
-        "113 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Black"
     },
@@ -3826,14 +3266,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Inhuman",
-      "height": [
-        "6'2",
-        "188 cm"
-      ],
-      "weight": [
-        "210 lb",
-        "95 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -3878,14 +3310,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Metahuman",
-      "height": [
-        "5'7",
-        "170 cm"
-      ],
-      "weight": [
-        "130 lb",
-        "59 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -3930,14 +3354,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Human",
-      "height": [
-        "5'5",
-        "165 cm"
-      ],
-      "weight": [
-        "128 lb",
-        "58 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -3982,14 +3398,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Human",
-      "height": [
-        "5'10",
-        "178 cm"
-      ],
-      "weight": [
-        "120 lb",
-        "54 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Blond"
     },
@@ -4034,14 +3442,6 @@
     "appearance": {
       "gender": "Male",
       "race": "God / Eternal",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -4091,14 +3491,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "190 lb",
-        "86 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Brown"
     },
@@ -4145,14 +3537,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'1",
-        "185 cm"
-      ],
-      "weight": [
-        "200 lb",
-        "90 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "No Hair"
     },
@@ -4197,14 +3581,6 @@
     "appearance": {
       "gender": "Female",
       "race": null,
-      "height": [
-        "5'7",
-        "170 cm"
-      ],
-      "weight": [
-        "115 lb",
-        "52 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Black"
     },
@@ -4249,14 +3625,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'2",
-        "188 cm"
-      ],
-      "weight": [
-        "205 lb",
-        "92 kg"
-      ],
       "eyeColor": "Black",
       "hairColor": "No Hair"
     },
@@ -4303,14 +3671,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "200 lb",
-        "90 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Black"
     },
@@ -4347,7 +3707,7 @@
     }
   },
   {
-    "id": 81,
+    "id": 810,
     "name": "Big Barda",
     "slug": "81-big-barda",
     "powerstats": {
@@ -4361,14 +3721,6 @@
     "appearance": {
       "gender": "Female",
       "race": "New God",
-      "height": [
-        "6'2",
-        "188 cm"
-      ],
-      "weight": [
-        "300 lb",
-        "135 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -4414,14 +3766,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -4466,14 +3810,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "5'5",
-        "165 cm"
-      ],
-      "weight": [
-        "157 lb",
-        "71 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Brown"
     },
@@ -4518,14 +3854,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Alpha",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -4570,14 +3898,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Cyborg",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -4622,14 +3942,6 @@
     "appearance": {
       "gender": "-",
       "race": null,
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -4674,14 +3986,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Mutant",
-      "height": [
-        "6'6",
-        "198 cm"
-      ],
-      "weight": [
-        "275 lb",
-        "124 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "No Hair"
     },
@@ -4726,14 +4030,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Bizarro",
-      "height": [
-        "6'3",
-        "191 cm"
-      ],
-      "weight": [
-        "345 lb",
-        "155 kg"
-      ],
       "eyeColor": "Black",
       "hairColor": "Black"
     },
@@ -4778,14 +4074,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'3",
-        "191 cm"
-      ],
-      "weight": [
-        "250 lb",
-        "113 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Black"
     },
@@ -4833,14 +4121,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Inhuman",
-      "height": [
-        "6'2",
-        "188 cm"
-      ],
-      "weight": [
-        "210 lb",
-        "95 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Black"
     },
@@ -4885,14 +4165,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Metahuman",
-      "height": [
-        "5'7",
-        "170 cm"
-      ],
-      "weight": [
-        "130 lb",
-        "59 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -4937,14 +4209,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Human",
-      "height": [
-        "5'5",
-        "165 cm"
-      ],
-      "weight": [
-        "128 lb",
-        "58 kg"
-      ],
       "eyeColor": "Blue",
       "hairColor": "Blond"
     },
@@ -4989,14 +4253,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Human",
-      "height": [
-        "5'10",
-        "178 cm"
-      ],
-      "weight": [
-        "120 lb",
-        "54 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Blond"
     },
@@ -5041,14 +4297,6 @@
     "appearance": {
       "gender": "Male",
       "race": "God / Eternal",
-      "height": [
-        "-",
-        "0 cm"
-      ],
-      "weight": [
-        "- lb",
-        "0 kg"
-      ],
       "eyeColor": "-",
       "hairColor": "-"
     },
@@ -5098,14 +4346,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "190 lb",
-        "86 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Brown"
     },
@@ -5152,14 +4392,6 @@
     "appearance": {
       "gender": "Male",
       "race": null,
-      "height": [
-        "6'1",
-        "185 cm"
-      ],
-      "weight": [
-        "200 lb",
-        "90 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "No Hair"
     },
@@ -5204,14 +4436,6 @@
     "appearance": {
       "gender": "Female",
       "race": null,
-      "height": [
-        "5'7",
-        "170 cm"
-      ],
-      "weight": [
-        "115 lb",
-        "52 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Black"
     },
@@ -5256,14 +4480,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'2",
-        "188 cm"
-      ],
-      "weight": [
-        "205 lb",
-        "92 kg"
-      ],
       "eyeColor": "Black",
       "hairColor": "No Hair"
     },
@@ -5310,14 +4526,6 @@
     "appearance": {
       "gender": "Male",
       "race": "Human",
-      "height": [
-        "6'0",
-        "183 cm"
-      ],
-      "weight": [
-        "200 lb",
-        "90 kg"
-      ],
       "eyeColor": "Brown",
       "hairColor": "Black"
     },
@@ -5368,14 +4576,6 @@
     "appearance": {
       "gender": "Female",
       "race": "Human",
-      "height": [
-        "5'7",
-        "170 cm"
-      ],
-      "weight": [
-        "131 lb",
-        "59 kg"
-      ],
       "eyeColor": "Green",
       "hairColor": "Auburn"
     },

@@ -8,7 +8,7 @@ export interface Superhero {
   work: Work;
   connections: Connections;
   images: ImageSet;
-  createdAt?: Date;
+  createdAt: string
 }
 
 export interface Powerstats {
@@ -23,14 +23,11 @@ export interface Powerstats {
 export interface Appearance {
   gender: string;
   race: string;
-  height: string[];
-  weight: string[];
   eyeColor: string;
   hairColor: string;
 }
 
 export interface Biography {
-  fullName: string;
   alterEgos: string;
   aliases: string[];
   placeOfBirth: string;
@@ -60,4 +57,5 @@ export interface Filters {
   race: string;
   order: 'az' | 'za' | 'recent';
   publisher: 'all' | 'marvel' | 'dc' | 'bad';
+  name: string;
 }

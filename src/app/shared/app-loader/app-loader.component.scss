@@ -1,0 +1,55 @@
+.global-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 13, 23, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.loader-box {
+  text-align: center;
+}
+
+.glow-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #00ffff;
+  border-top-color: transparent;
+  animation: spin 1.2s linear infinite;
+  box-shadow: 0 0 12px #00ffff, 0 0 24px #00ffff44;
+  margin: 0 auto 1rem;
+}
+
+.glow-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  color: #00ffff;
+  text-shadow: 0 0 12px #00ffff, 0 0 4px #fff;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
