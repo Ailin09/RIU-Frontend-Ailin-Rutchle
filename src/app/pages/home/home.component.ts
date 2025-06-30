@@ -122,6 +122,7 @@ import { MatInputModule } from '@angular/material/input';
             [hero]="hero"
             [onEdit]="onEditHero"
             [onDelete]="onDeleteHero"
+            [goToDetail]="goToDetail"
             class="card-neon"
           />
           }
@@ -216,4 +217,10 @@ export class HomeComponent implements OnInit {
         }
       });
   };
+goToDetail = (id: number): void => {
+  console.log('Navegando al detalle del héroe con ID:', id);
+  this.router.navigate(['/detail-hero', id]);
+};
+
+
 }

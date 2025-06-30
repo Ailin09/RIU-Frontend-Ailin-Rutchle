@@ -90,3 +90,28 @@
   font-family: 'Orbitron', sans-serif;
   text-shadow: 0 0 5px #00ffff;
 }
+.view-more-overlay {
+  position: absolute;
+  bottom: 16px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 174, 255, 0.2);
+  color: #00ffff;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 6px #00ffff;
+  border: 1px solid #00aeff;
+  box-shadow: 0 0 12px rgba(0, 174, 255, 0.33);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 0.3rem 1rem; 
+  font-size: 0.85rem;  
+  white-space: nowrap; 
+  z-index: 5;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: rgba(0, 174, 255, 0.4);
+    box-shadow: 0 0 20px #00ffff;
+    color: white;
+  }
+}
