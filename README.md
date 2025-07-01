@@ -1,4 +1,4 @@
-# RIU Frontend - Challenge Técnico
+# RIU Frontend - 
 
 SPA desarrollada en Angular 18 para la gestión de superhéroes. Incluye creación, edición, filtrado y visualización de tarjetas. El diseño está inspirado en un estilo **neón futurista** con soporte para pantallas móviles.
 
