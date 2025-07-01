@@ -1,0 +1,91 @@
+  <mat-toolbar class="neon-header">
+      <img src="assets/logo.svg" class="main-logo" alt="Logo" />
+      <span class="header-spacer"></span>
+      <button class="neon-watch-blue" (click)="createHero()">
+        <mat-icon class="icon">add</mat-icon>
+        Agregar Héroe
+      </button>
+    </mat-toolbar>
+
+    <main>
+      <section class="custom-carousel-bg">
+        <app-hero-carousel
+          [heroes]="latestHeroes()"
+          title="Últimos agregados"
+        />
+      </section>
+      <section class="custom-cardlist-bg card-neon">
+        <div class="custom-title">
+          <h4 class="neon-title">Todos los héroes</h4>
+          <button class="neon-outline icon-left" (click)="resetFilters()">
+            <mat-icon class="icon">refresh</mat-icon>
+            Limpiar filtros
+          </button>
+        </div>
+
+        <form [formGroup]="filterForm" class="hero-card-list">
+          <mat-form-field appearance="outline" class="neon-form">
+            <mat-label>Editorial</mat-label>
+            <mat-select formControlName="publisher">
+              @for (publisher of publishers; track publisher.value) {
+              <mat-option [value]="publisher.value">{{
+                publisher.label
+              }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="neon-form">
+            <mat-label>Género</mat-label>
+            <mat-select formControlName="gender">
+              @for (gender of genders; track gender.value) {
+              <mat-option [value]="gender.value">{{ gender.label }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="neon-form">
+            <mat-label>Raza</mat-label>
+            <mat-select formControlName="race">
+              @for (race of races; track race.value) {
+              <mat-option [value]="race.value">{{ race.label }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="neon-form">
+            <mat-label>Orden</mat-label>
+            <mat-select formControlName="order">
+              @for (order of orders; track order.value) {
+              <mat-option [value]="order.value">{{ order.label }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="neon-form">
+            <mat-label>Buscar por nombre</mat-label>
+            <input matInput formControlName="name" placeholder="Ej: Batman" />
+          </mat-form-field>
+        </form>
+
+        <div class="hero-card-grid">
+          @for (hero of paginatedHeroes(); track hero.id) {
+          <app-hero-card
+            [hero]="hero"
+            [onEdit]="onEditHero"
+            [onDelete]="onDeleteHero"
+            [goToDetail]="goToDetail"
+            class="card-neon"
+          />
+          }
+        </div>
+
+        <mat-paginator
+          class="neon-paginator"
+          [length]="orderedHeroes().length"
+          [pageSize]="10"
+          [pageIndex]="currentPage() - 1"
+          (page)="onPageChange($event)"
+        ></mat-paginator>
+      </section>
+    </main>

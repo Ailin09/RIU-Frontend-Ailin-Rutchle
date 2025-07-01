@@ -15,15 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-hero-form-page',
   standalone: true,
   imports: [HeroFormComponent, MatIconModule],
-  template: `
-    <div class="hero-form-wrapper">
-      <app-hero-form
-        [hero]="hero()"
-        [isEditMode]="isEditMode()"
-        (formSubmit)="onSubmit($event)"
-      />
-    </div>
-  `,
+ templateUrl: './hero-form-page.component.html',
   styleUrl: './hero-form-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
