@@ -1,0 +1,7 @@
+<div class="hero-form-wrapper">
+  <app-hero-form
+    [hero]="hero()"
+    [isEditMode]="isEditMode()"
+    (formSubmit)="onSubmit($event)"
+  />
+</div>

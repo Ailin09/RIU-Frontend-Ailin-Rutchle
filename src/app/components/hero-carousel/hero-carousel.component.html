@@ -1,0 +1,44 @@
+<div>
+<h2 class="carousel-title">{{ title() }}</h2>
+<swiper-container
+  effect="coverflow"
+  grab-cursor="true"
+  centered-slides="true"
+  centered-slides-bounds="true"
+  [slides-per-view]="getSlidesPerView()"
+  coverflow-effect='{
+    "rotate": 18,
+    "stretch": 0,
+    "depth": 90,
+    "modifier": 1.18,
+    "scale": 0.98,
+    "slideShadows": true
+  }'
+  [initial-slide]="getInitialSlide()"
+  [breakpoints]="breakpoints"
+  autoplay='{"delay":2400,"pauseOnMouseEnter":true}'
+  class="custom-swiper"
+>
+  @for (hero of heroes(); track hero.id) {
+  <swiper-slide>
+    <div class="hero-card">
+      @if (isNewHero(hero)) {
+      <div class="new-badge">NUEVO</div>
+      }
+      <img class="hero-img" [src]="hero.images.lg" [alt]="hero.name" />
+      <div class="card-info">
+        <h3>{{ hero.name }}</h3>
+        <div class="power-row">
+          <span class="stat-label">Inteligencia</span>
+          <span class="stat-value">{{ hero.powerstats.intelligence }}</span>
+        </div>
+        <div class="power-row">
+          <span class="stat-label">Fuerza</span>
+          <span class="stat-value">{{ hero.powerstats.strength }}</span>
+        </div>
+      </div>
+    </div>
+  </swiper-slide>
+  }
+</swiper-container>
+</div>
