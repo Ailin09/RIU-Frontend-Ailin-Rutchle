@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test:coverage": "ng test --code-coverage",
+    "coverage:serve": "http-server coverage/riu-frontend-ailin-rutchle -o"
   },
   "private": true,
   "dependencies": {

@@ -36,11 +36,12 @@ addHero(newHero: Superhero): void {
     const heroToAdd = {
       ...newHero,
       id: nextId,
-      createdAt: new Date().toISOString(),
+      createdAt: newHero.createdAt || new Date().toISOString(), 
     };
     return [...current, heroToAdd];
   });
 }
+
 
 editHero(updatedHero: Superhero): void {
   this._heroes.update((heroes) =>

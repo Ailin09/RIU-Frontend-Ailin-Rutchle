@@ -8,7 +8,7 @@ export interface Superhero {
   work: Work;
   connections: Connections;
   images: ImageSet;
-  createdAt: string
+  createdAt: string;
 }
 
 export interface Powerstats {
@@ -56,6 +56,6 @@ export interface Filters {
   gender: string;
   race: string;
   order: 'az' | 'za' | 'recent';
-  publisher: 'all' | 'marvel' | 'dc' | 'bad';
+  publisher:| 'all'| 'Marvel Comics'| 'DC Comics'| 'Dark Horse Comics'| 'NBC - Heroes'| 'Archangel'| 'Tempest';
   name: string;
 }

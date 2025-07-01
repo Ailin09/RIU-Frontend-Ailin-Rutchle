@@ -13,12 +13,12 @@ register();
   templateUrl: './hero-carousel.component.html',
 })
 export class HeroCarouselComponent {
-  heroes = input<Superhero[]>(); 
+  heroes = input.required<Superhero[]>();
   title = input<string>('Últimos héroes agregados');
 
   getSlidesPerView(): number {
     const w = window.innerWidth;
-    const count = this.heroes()?.length ?? 1;
+    const count = this.heroes().length;
     if (w < 600) return 1;
     if (w < 900) return Math.min(3, count);
     return Math.min(5, count);
@@ -27,18 +27,16 @@ export class HeroCarouselComponent {
   breakpoints = {
     0: { slidesPerView: 1 },
     600: { slidesPerView: 3 },
-    900: { slidesPerView: 5 }
+    900: { slidesPerView: 5 },
   };
 
   getInitialSlide(): number {
     const arr = this.heroes();
     return arr?.length ? Math.floor(arr.length / 2) : 0;
   }
-  isNewHero(hero: Superhero): boolean {
-  const created = new Date(hero.createdAt ?? 0).getTime();
-  const now = Date.now();
-  const oneDayMs = 24 * 60 * 60 * 1000;
-  return now - created < oneDayMs;
+ isNewHero(hero: Superhero): boolean {
+  if (!hero.createdAt) return false;
+  return Date.now() - new Date(hero.createdAt).getTime() < 86400000;
 }
 
 }

@@ -1,30 +1,29 @@
 import {
   Component,
-  inject,
   computed,
-  ViewEncapsulation,
+  inject,
   OnInit,
-  effect,
+  ViewEncapsulation,
 } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
-import { HeroService } from '../../services/hero.service';
-import { HeroCarouselComponent } from '../../components/hero-carousel/hero-carousel.component';
-import { HeroCardComponent } from '../../components/hero-card/hero-card.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialog } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
-import { ModalMessageComponent } from '../../shared/modal-message/modal-message.component';
+import { HeroCardComponent } from '../../components/hero-card/hero-card.component';
+import { HeroCarouselComponent } from '../../components/hero-carousel/hero-carousel.component';
 import { Filters } from '../../models/superhero.interface';
+import { HeroService } from '../../services/hero.service';
+import { ModalMessageComponent } from '../../shared/modal-message/modal-message.component';
 import { GENDERS, ORDERS, PUBLISHERS, RACES } from '../../utils/hero';
-import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-home',
