@@ -75,7 +75,7 @@ export class HeroFormComponent implements OnInit {
   private fb = inject(FormBuilder);
   heroService = inject(HeroService);
   private location = inject(Location);
-  heroId = signal<number | null>(null);
+  heroId = signal<number >(0);
   createdAt = signal<string | null>(null);
 
   constructor() {
@@ -138,8 +138,9 @@ export class HeroFormComponent implements OnInit {
     const name = this.form.get('name')?.value;
     this.form.get('name')?.setValue(name?.toUpperCase());
     this.aliases.set(h.biography?.aliases ?? []);
-    this.imagePreview.set(h.images?.lg ?? '');
+    this.imagePreview.set(h.images?.lg );
     this.createdAt.set(h.createdAt ?? new Date().toISOString());
+    this.form.get('image')?.markAsDirty(); 
   }
 
   addAlias(event: MatChipInputEvent): void {
@@ -153,17 +154,18 @@ export class HeroFormComponent implements OnInit {
   removeAlias(alias: string): void {
     this.aliases.update((current) => current.filter((a) => a !== alias));
   }
-  onImageSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (!input.files?.length) return;
+ async onImageSelected(event: Event): Promise<void> {
+  const input = event.target as HTMLInputElement;
+  if (!input.files?.length) return;
 
-    const file = input.files[0];
+  const file = input.files[0];
+  const resized = await this.resizeImage(file);
 
-    this.resizeImage(file).then((resized) => {
-      this.imagePreview.set(resized);
-      this.form.patchValue({ image: resized });
-    });
-  }
+  this.imagePreview.set(resized);
+  this.form.patchValue({ image: resized });
+  this.form.get('image')?.markAsDirty();
+}
+
 
   resizeImage(file: File, maxWidth = 300, maxHeight = 300): Promise<string> {
     return new Promise((resolve) => {
@@ -177,7 +179,7 @@ export class HeroFormComponent implements OnInit {
           canvas.height = img.height * scale;
 
           const ctx = canvas.getContext('2d');
-          if (!ctx) return;
+          if (!ctx) return resolve('');
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
           const resizedBase64 = canvas.toDataURL('image/jpeg', 0.7);
@@ -246,4 +248,5 @@ export class HeroFormComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+  
 }
