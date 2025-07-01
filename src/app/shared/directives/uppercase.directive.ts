@@ -5,14 +5,12 @@ import { NgControl } from '@angular/forms';
   selector: '[appUppercase]',
   standalone: true,
 })
-export class UppercaseDirective { 
-ngControl = inject(NgControl);
+export class UppercaseDirective {
+  ngControl = inject(NgControl);
 
   @HostListener('input', ['$event.target.value'])
-   onInput(value: string): void {
-    const capitalized = value
-      .toLowerCase()
-      .replace(/\b\w/g, (char) => char.toUpperCase());
-    this.ngControl.control?.setValue(capitalized, { emitEvent: false });
+  onInput(value: string): void {
+    const uppercased = value.toUpperCase();
+    this.ngControl.control?.setValue(uppercased, { emitEvent: false });
   }
 }

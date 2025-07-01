@@ -24,7 +24,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Superhero } from '../../models/superhero.interface';
 import { MatSliderModule } from '@angular/material/slider';
-import {  ALINEATIONS_FORM,  GENDERS_FORM, PUBLISHERS_FORM,  RACES_FORM } from '../../utils/hero';
+import {
+  ALINEATIONS_FORM,
+  GENDERS_FORM,
+  PUBLISHERS_FORM,
+  RACES_FORM,
+} from '../../utils/hero';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HeroService } from '../../services/hero.service';
@@ -48,7 +53,7 @@ import { UppercaseDirective } from '../../shared/directives/uppercase.directive'
     FormsModule,
     MatAutocompleteModule,
     MatGridListModule,
-    UppercaseDirective
+    UppercaseDirective,
   ],
   styleUrls: ['./hero-form.component.scss'],
 
@@ -86,10 +91,7 @@ import { UppercaseDirective } from '../../shared/directives/uppercase.directive'
                 <mat-label>Nombre </mat-label>
                 <input matInput formControlName="name" appUppercase />
                 <mat-error
-                  *ngIf="
-                    form.get('name')?.invalid &&
-                    form.get('name')?.touched
-                  "
+                  *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
                   >El nombre completo es obligatorio</mat-error
                 >
               </mat-form-field>
@@ -174,7 +176,7 @@ import { UppercaseDirective } from '../../shared/directives/uppercase.directive'
                 <mat-select formControlName="alignment">
                   @for (option of alineations; track option.value) {
                   <mat-option [value]="option.value">
-                    {{option.label}}
+                    {{ option.label }}
                   </mat-option>
                   }
                 </mat-select>
@@ -260,10 +262,7 @@ import { UppercaseDirective } from '../../shared/directives/uppercase.directive'
             <mat-icon>arrow_back</mat-icon>
             Volver
           </button>
-          <button
-            class="neon-watch-blue"
-            (click)="onSubmit()"
-          >
+          <button class="neon-watch-blue" (click)="onSubmit()">
             <mat-icon class="icon">upload</mat-icon>
             {{ isEditMode() ? 'Guardar cambios' : 'Crear héroe' }}
           </button>
@@ -283,13 +282,12 @@ export class HeroFormComponent implements OnInit {
   publishers = PUBLISHERS_FORM;
   alineations = ALINEATIONS_FORM;
   genders = GENDERS_FORM;
-  races = RACES_FORM
+  races = RACES_FORM;
   private fb = inject(FormBuilder);
   heroService = inject(HeroService);
   private location = inject(Location);
   heroId = signal<number | null>(null);
   createdAt = signal<string | null>(null);
-
 
   constructor() {
     this.form = this.fb.group({
@@ -324,7 +322,7 @@ export class HeroFormComponent implements OnInit {
     const h = this.hero();
     if (!h) return;
     this.heroId.set(h.id);
-    this.form.markAsPristine()
+    this.form.markAsPristine();
     this.form.patchValue({
       image: h.images?.lg ?? '',
       name: h.name ?? '',
@@ -348,11 +346,11 @@ export class HeroFormComponent implements OnInit {
       groupAffiliation: h.connections?.groupAffiliation ?? '',
       relatives: h.connections?.relatives ?? '',
     });
-
+    const name = this.form.get('name')?.value;
+    this.form.get('name')?.setValue(name?.toUpperCase());
     this.aliases.set(h.biography?.aliases ?? []);
     this.imagePreview.set(h.images?.lg ?? '');
     this.createdAt.set(h.createdAt ?? new Date().toISOString());
-
   }
 
   addAlias(event: MatChipInputEvent): void {
@@ -402,63 +400,61 @@ export class HeroFormComponent implements OnInit {
     });
   }
 
- onSubmit(): void {
-  if (this.form.invalid) {
-    console.warn('Formulario inválido', this.form.errors, this.form.value);
-    return;
+  onSubmit(): void {
+    if (this.form.invalid) {
+      console.warn('Formulario inválido', this.form.errors, this.form.value);
+      return;
+    }
+
+    const heroForm = this.form.value;
+
+    const hero: Superhero = {
+      ...heroForm,
+      id: this.isEditMode() ? this.heroId! : 0,
+      createdAt: this.isEditMode() ? this.createdAt()! : '',
+      name: heroForm.name,
+      powerstats: {
+        intelligence: +heroForm.intelligence,
+        strength: +heroForm.strength,
+        speed: +heroForm.speed,
+        durability: +heroForm.durability,
+        power: +heroForm.power,
+        combat: +heroForm.combat,
+      },
+      appearance: {
+        gender: heroForm.gender,
+        race: heroForm.race,
+        eyeColor: heroForm.eyeColor,
+        hairColor: heroForm.hairColor,
+      },
+      biography: {
+        alterEgos: heroForm.alterEgos,
+        aliases: this.aliases(),
+        placeOfBirth: heroForm.placeOfBirth,
+        firstAppearance: heroForm.firstAppearance,
+        publisher: heroForm.publisher,
+        alignment: heroForm.alignment,
+      },
+      work: {
+        occupation: heroForm.occupation,
+        base: heroForm.base,
+      },
+      connections: {
+        groupAffiliation: heroForm.groupAffiliation,
+        relatives: heroForm.relatives,
+      },
+      images: {
+        xs: heroForm.image,
+        sm: heroForm.image,
+        md: heroForm.image,
+        lg: heroForm.image,
+      },
+    };
+
+    this.formSubmit.emit(hero);
   }
-
-  const heroForm = this.form.value;
-
-  const hero: Superhero = {
-    ...heroForm,
-    id: this.isEditMode() ? this.heroId! : 0,
-    createdAt: this.isEditMode() ? this.createdAt()! : '',
-    name: heroForm.name,
-    powerstats: {
-      intelligence: +heroForm.intelligence,
-      strength: +heroForm.strength,
-      speed: +heroForm.speed,
-      durability: +heroForm.durability,
-      power: +heroForm.power,
-      combat: +heroForm.combat,
-    },
-    appearance: {
-      gender: heroForm.gender,
-      race: heroForm.race,
-      eyeColor: heroForm.eyeColor,
-      hairColor: heroForm.hairColor,
-    },
-    biography: {
-      alterEgos: heroForm.alterEgos,
-      aliases: this.aliases(),
-      placeOfBirth: heroForm.placeOfBirth,
-      firstAppearance: heroForm.firstAppearance,
-      publisher: heroForm.publisher,
-      alignment: heroForm.alignment,
-    },
-    work: {
-      occupation: heroForm.occupation,
-      base: heroForm.base,
-    },
-    connections: {
-      groupAffiliation: heroForm.groupAffiliation,
-      relatives: heroForm.relatives,
-    },
-    images: {
-      xs: heroForm.image,
-      sm: heroForm.image,
-      md: heroForm.image,
-      lg: heroForm.image,
-    },
-  };
-
-  this.formSubmit.emit(hero);
-}
 
   goBack(): void {
     this.location.back();
   }
-
-
 }
