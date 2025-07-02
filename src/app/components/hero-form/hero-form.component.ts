@@ -1,3 +1,4 @@
+import { CommonModule, Location } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,7 +8,6 @@ import {
   output,
   signal,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
   FormGroup,
@@ -15,26 +15,25 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipInputEvent, MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MatChipInputEvent, MatChipsModule } from '@angular/material/chips';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { Superhero } from '../../models/superhero.interface';
 import { MatSliderModule } from '@angular/material/slider';
+import { Superhero } from '../../models/superhero.interface';
+import { HeroService } from '../../services/hero.service';
+import { UppercaseDirective } from '../../shared/directives/uppercase.directive';
 import {
   ALINEATIONS_FORM,
   GENDERS_FORM,
   PUBLISHERS_FORM,
   RACES_FORM,
 } from '../../utils/hero';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { HeroService } from '../../services/hero.service';
-import { Location } from '@angular/common';
-import { UppercaseDirective } from '../../shared/directives/uppercase.directive';
 
 @Component({
   selector: 'app-hero-form',
@@ -58,7 +57,6 @@ import { UppercaseDirective } from '../../shared/directives/uppercase.directive'
   templateUrl: './hero-form.component.html',
   styleUrls: ['./hero-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-
 })
 export class HeroFormComponent implements OnInit {
   hero = input<Superhero | null>();
@@ -75,14 +73,16 @@ export class HeroFormComponent implements OnInit {
   private fb = inject(FormBuilder);
   heroService = inject(HeroService);
   private location = inject(Location);
-  heroId = signal<number >(0);
+  heroId = signal<number>(0);
   createdAt = signal<string | null>(null);
+  originalValue!: Superhero;
 
   constructor() {
     this.form = this.fb.group({
       image: ['', Validators.required],
       name: ['', Validators.required],
       firstAppearance: [''],
+      slug: [''],
       publisher: ['', Validators.required],
       alterEgos: [''],
       gender: ['', Validators.required],
@@ -93,15 +93,34 @@ export class HeroFormComponent implements OnInit {
       alignment: [''],
       occupation: [''],
       base: [''],
-      intelligence: ['', [Validators.min(0), Validators.max(100)]],
-      strength: ['', [Validators.min(0), Validators.max(100)]],
-      speed: ['', [Validators.min(0), Validators.max(100)]],
-      durability: ['', [Validators.min(0), Validators.max(100)]],
-      power: ['', [Validators.min(0), Validators.max(100)]],
-      combat: ['', [Validators.min(0), Validators.max(100)]],
+      intelligence: [
+        '',
+        [Validators.required, Validators.min(0), Validators.max(100)],
+      ],
+      strength: [
+        '',
+        [Validators.required, Validators.min(0), Validators.max(100)],
+      ],
+      speed: [
+        '',
+        [Validators.required, Validators.min(0), Validators.max(100)],
+      ],
+      durability: [
+        '',
+        [Validators.required, Validators.min(0), Validators.max(100)],
+      ],
+      power: [
+        '',
+        [Validators.required, Validators.min(0), Validators.max(100)],
+      ],
+      combat: [
+        '',
+        [Validators.required, Validators.min(0), Validators.max(100)],
+      ],
       groupAffiliation: [''],
       relatives: [''],
     });
+    this.form.markAllAsTouched();
   }
 
   ngOnInit(): void {
@@ -115,6 +134,7 @@ export class HeroFormComponent implements OnInit {
     this.form.patchValue({
       image: h.images?.lg ?? '',
       name: h.name ?? '',
+      slug: h.slug ?? '',
       firstAppearance: h.biography?.firstAppearance ?? '',
       publisher: h.biography?.publisher ?? '',
       alterEgos: h.biography?.alterEgos ?? '',
@@ -135,12 +155,15 @@ export class HeroFormComponent implements OnInit {
       groupAffiliation: h.connections?.groupAffiliation ?? '',
       relatives: h.connections?.relatives ?? '',
     });
+    queueMicrotask(() => {
+      this.originalValue = this.form.getRawValue();
+    });
     const name = this.form.get('name')?.value;
     this.form.get('name')?.setValue(name?.toUpperCase());
     this.aliases.set(h.biography?.aliases ?? []);
-    this.imagePreview.set(h.images?.lg );
+    this.imagePreview.set(h.images?.lg);
     this.createdAt.set(h.createdAt ?? new Date().toISOString());
-    this.form.get('image')?.markAsDirty(); 
+    this.form.get('image')?.markAsDirty();
   }
 
   addAlias(event: MatChipInputEvent): void {
@@ -154,18 +177,17 @@ export class HeroFormComponent implements OnInit {
   removeAlias(alias: string): void {
     this.aliases.update((current) => current.filter((a) => a !== alias));
   }
- async onImageSelected(event: Event): Promise<void> {
-  const input = event.target as HTMLInputElement;
-  if (!input.files?.length) return;
+  async onImageSelected(event: Event): Promise<void> {
+    const input = event.target as HTMLInputElement;
+    if (!input.files?.length) return;
 
-  const file = input.files[0];
-  const resized = await this.resizeImage(file);
+    const file = input.files[0];
+    const resized = await this.resizeImage(file);
 
-  this.imagePreview.set(resized);
-  this.form.patchValue({ image: resized });
-  this.form.get('image')?.markAsDirty();
-}
-
+    this.imagePreview.set(resized);
+    this.form.patchValue({ image: resized });
+    this.form.get('image')?.markAsDirty();
+  }
 
   resizeImage(file: File, maxWidth = 300, maxHeight = 300): Promise<string> {
     return new Promise((resolve) => {
@@ -193,7 +215,13 @@ export class HeroFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.invalid) {
-      console.warn('Formulario inválido', this.form.errors, this.form.value);
+      this.form.markAllAsTouched();
+
+      const firstInvalid = document.querySelector('.ng-invalid') as HTMLElement;
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
       return;
     }
 
@@ -204,6 +232,7 @@ export class HeroFormComponent implements OnInit {
       id: this.isEditMode() ? this.heroId! : 0,
       createdAt: this.isEditMode() ? this.createdAt()! : '',
       name: heroForm.name,
+      slug: heroForm.slug,
       powerstats: {
         intelligence: +heroForm.intelligence,
         strength: +heroForm.strength,
@@ -248,5 +277,33 @@ export class HeroFormComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-  
+  hasInvalidPowerStats(): boolean {
+    return [
+      'intelligence',
+      'strength',
+      'speed',
+      'durability',
+      'power',
+      'combat',
+    ].some((field) => {
+      const control = this.form.get(field);
+      return control && control.invalid && control.touched;
+    });
+  }
+  enforceMax(event: Event, maxValue: number): void {
+    const input = event.target as HTMLInputElement;
+    if (+input.value > maxValue) {
+      input.value = maxValue.toString();
+      const controlName = input.getAttribute('formcontrolname');
+      if (controlName) {
+        this.form.get(controlName)?.setValue(maxValue);
+      }
+    }
+  }
+  hasFormChanged(): boolean {
+    return (
+      JSON.stringify(this.form.getRawValue()) !==
+      JSON.stringify(this.originalValue)
+    );
+  }
 }

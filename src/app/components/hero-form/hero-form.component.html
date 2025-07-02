@@ -1,210 +1,297 @@
- <main class="hero-form">
-      <mat-card class="hero-card-container">
-        <mat-card-title>{{
-          isEditMode() ? 'Editar Héroe' : 'Crear Nuevo Héroe'
-        }}</mat-card-title>
-        <mat-card-content [formGroup]="form">
-          <div class="form-header-grid">
-            <div class="hero-image-preview-block" (click)="fileInput.click()">
-              <input
-                type="file"
-                accept="image/*"
-                hidden
-                #fileInput
-                (change)="onImageSelected($event)"
-              />
-              <div class="image-clickable">
-                @if (imagePreview()) {
-                <img [src]="imagePreview()" alt="Hero Image" />
-                } @else {
-                <span class="image-placeholder">Subir imagen del héroe</span>
-                }
-              </div>
-              @if (form.get('image')?.invalid && form.get('image')?.touched) {
-              <mat-error class="error-text">La imagen es obligatoria</mat-error>
-              }
-            </div>
-
-            <div class="hero-fields-grid">
-              <mat-form-field appearance="outline">
-                <mat-label>Nombre </mat-label>
-                <input matInput formControlName="name" appUppercase />
-                <mat-error
-                  *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
-                  >El nombre completo es obligatorio</mat-error
-                >
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Género</mat-label>
-                <mat-select formControlName="gender">
-                  @for (option of genders; track option.value) {
-                  <mat-option [value]="option.value">{{
-                    option.label
-                  }}</mat-option>
-                  }
-                </mat-select>
-                <mat-error
-                  *ngIf="
-                    form.get('gender')?.invalid && form.get('gender')?.touched
-                  "
-                  >El género es obligatorio</mat-error
-                >
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Primera aparición</mat-label>
-                <input matInput formControlName="firstAppearance" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Raza</mat-label>
-                <mat-select formControlName="race">
-                  @for (option of races; track option.label) {
-                  <mat-option [value]="option.value">{{
-                    option.label
-                  }}</mat-option>
-                  }
-                </mat-select>
-                <mat-error
-                  *ngIf="form.get('race')?.invalid && form.get('race')?.touched"
-                  >La raza es obligatoria</mat-error
-                >
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Editorial</mat-label>
-                <mat-select formControlName="publisher">
-                  @for (option of publishers; track option.value) {
-                  <mat-option [value]="option.value">{{
-                    option.label
-                  }}</mat-option>
-                  }
-                </mat-select>
-                <mat-error
-                  *ngIf="
-                    form.get('publisher')?.invalid &&
-                    form.get('publisher')?.touched
-                  "
-                  >La editorial es obligatoria</mat-error
-                >
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Alter egos</mat-label>
-                <input matInput formControlName="alterEgos" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Color de ojos</mat-label>
-                <input matInput formControlName="eyeColor" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Color de cabello</mat-label>
-                <input matInput formControlName="hairColor" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Lugar de nacimiento</mat-label>
-                <input matInput formControlName="placeOfBirth" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Alineación</mat-label>
-                <mat-select formControlName="alignment">
-                  @for (option of alineations; track option.value) {
-                  <mat-option [value]="option.value">
-                    {{ option.label }}
-                  </mat-option>
-                  }
-                </mat-select>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Ocupación</mat-label>
-                <input matInput formControlName="occupation" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Base</mat-label>
-                <input matInput formControlName="base" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Afiliaciones</mat-label>
-                <input matInput formControlName="groupAffiliation" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Parientes</mat-label>
-                <input matInput formControlName="relatives" />
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                <mat-label>Alias </mat-label>
-                <mat-chip-grid #chipGrid aria-label="Alias selection">
-                  @for (alias of aliases(); track alias) {
-                  <mat-chip-row (removed)="removeAlias(alias)">
-                    {{ alias }}
-                    <button matChipRemove>
-                      <mat-icon>cancel</mat-icon>
-                    </button>
-                  </mat-chip-row>
-                  }
-                  <input
-                    [matChipInputFor]="chipGrid"
-                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                    [matChipInputAddOnBlur]="true"
-                    (matChipInputTokenEnd)="addAlias($event)"
-                    placeholder="Ingresá un alias"
-                  />
-                </mat-chip-grid>
-              </mat-form-field>
-
-              <div class="form-section-title">Estadísticas de poder</div>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Inteligencia</mat-label>
-                <input matInput type="number" formControlName="intelligence" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Fuerza</mat-label>
-                <input matInput type="number" formControlName="strength" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Velocidad</mat-label>
-                <input matInput type="number" formControlName="speed" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Durabilidad</mat-label>
-                <input matInput type="number" formControlName="durability" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Poder</mat-label>
-                <input matInput type="number" formControlName="power" />
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Combate</mat-label>
-                <input matInput type="number" formControlName="combat" />
-              </mat-form-field>
-            </div>
+<main class="hero-form">
+  <mat-card>
+    <mat-card-title>{{
+      isEditMode() ? "Editar Héroe" : "Crear  Héroe"
+    }}</mat-card-title>
+    <mat-card-content [formGroup]="form">
+      <div class="form-header-grid">
+        <!-- Imagen -->
+        <div class="hero-image-preview-block" (click)="fileInput.click()">
+          <input
+            type="file"
+            accept="image/*"
+            hidden
+            #fileInput
+            (change)="onImageSelected($event)"
+          />
+          <div class="image-clickable">
+            @if (imagePreview()) {
+            <img [src]="imagePreview()" alt="Hero Image" />
+            } @else {
+            <span class="image-placeholder">Subir imagen del héroe</span>
+            }
           </div>
-        </mat-card-content>
+          @if (form.get('image')?.hasError('required') &&
+          form.get('image')?.touched) {
+          <mat-error class="error-text">La imagen es obligatoria</mat-error>
+          }
+        </div>
 
-        <mat-card-actions>
-          <button class="neon-watch-blue" (click)="goBack()">
-            <mat-icon>arrow_back</mat-icon>
-            Volver
-          </button>
-          <button class="neon-watch-blue" (click)="onSubmit()">
-            <mat-icon class="icon">upload</mat-icon>
-            {{ isEditMode() ? 'Guardar cambios' : 'Crear héroe' }}
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    </main>
+        <!-- Campos -->
+        <div class="form-fields">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" appUppercase />
+            <mat-error
+              *ngIf="
+                form.get('name')?.hasError('required') &&
+                form.get('name')?.touched
+              "
+            >
+              El nombre es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Apodo</mat-label>
+            <input matInput formControlName="slug" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Editorial</mat-label>
+            <mat-select formControlName="publisher">
+              @for (option of publishers; track option.value) {
+              <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-select>
+            <mat-error
+              *ngIf="
+                form.get('publisher')?.hasError('required') &&
+                form.get('publisher')?.touched
+              "
+            >
+              La editorial es obligatoria
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Alter egos</mat-label>
+            <input matInput formControlName="alterEgos" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Color de ojos</mat-label>
+            <input matInput formControlName="eyeColor" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Color de cabello</mat-label>
+            <input matInput formControlName="hairColor" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Lugar de nacimiento</mat-label>
+            <input matInput formControlName="placeOfBirth" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Género</mat-label>
+            <mat-select formControlName="gender">
+              @for (option of genders; track option.value) {
+              <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-select>
+            <mat-error
+              *ngIf="
+                form.get('gender')?.hasError('required') &&
+                form.get('gender')?.touched
+              "
+            >
+              El género es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Primera aparición</mat-label>
+            <input matInput formControlName="firstAppearance" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Raza</mat-label>
+            <mat-select formControlName="race">
+              @for (option of races; track option.label) {
+              <mat-option [value]="option.value">{{ option.label }}</mat-option>
+              }
+            </mat-select>
+            <mat-error
+              *ngIf="
+                form.get('race')?.hasError('required') &&
+                form.get('race')?.touched
+              "
+            >
+              La raza es obligatoria
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Alineación</mat-label>
+            <mat-select formControlName="alignment">
+              <mat-option value="good">Bueno</mat-option>
+              <mat-option value="bad">Malo</mat-option>
+              <mat-option value="neutral">Neutral</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Ocupación</mat-label>
+            <input matInput formControlName="occupation" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Base</mat-label>
+            <input matInput formControlName="base" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Afiliaciones</mat-label>
+            <input matInput formControlName="groupAffiliation" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Parientes</mat-label>
+            <input matInput formControlName="relatives" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Alias</mat-label>
+            <mat-chip-grid #chipGrid aria-label="Alias selection">
+              @for (alias of aliases(); track alias) {
+              <mat-chip-row (removed)="removeAlias(alias)">
+                {{ alias }}
+                <button matChipRemove>
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip-row>
+              }
+              <input
+                [matChipInputFor]="chipGrid"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="true"
+                (matChipInputTokenEnd)="addAlias($event)"
+                placeholder="Ingresá un alias"
+              />
+            </mat-chip-grid>
+          </mat-form-field>
+        </div>
+
+        <!-- Sección de estadísticas -->
+        <mat-card-title> Estadísticas de poder </mat-card-title>
+        <div
+          class="power-stats-grid"
+          [class.power-section-error]="hasInvalidPowerStats()"
+        >
+          <mat-form-field appearance="outline">
+            <mat-label>Inteligencia*</mat-label>
+            <input matInput type="number" formControlName="intelligence" max="100"
+  maxlength="3"
+  (input)="enforceMax($event, 100)"/>
+            <mat-error
+              *ngIf="
+                form.get('intelligence')?.hasError('required') &&
+                form.get('intelligence')?.touched
+              "
+            >
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Fuerza*</mat-label>
+            <input matInput type="number" formControlName="strength" max="100"
+  maxlength="3"
+  (input)="enforceMax($event, 100)"/>
+            <mat-error
+              *ngIf="
+                form.get('strength')?.hasError('required') &&
+                form.get('strength')?.touched
+              "
+            >
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Velocidad*</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="speed"
+              max="100"
+              maxlength="3"
+              (input)="enforceMax($event, 100)"
+            />
+
+            <mat-error
+              *ngIf="
+                form.get('speed')?.hasError('required') &&
+                form.get('speed')?.touched
+              "
+            >
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Durabilidad*</mat-label>
+            <input matInput type="number" formControlName="durability" max="100"
+  maxlength="3"
+  (input)="enforceMax($event, 100)" />
+            <mat-error
+              *ngIf="
+                form.get('durability')?.hasError('required') &&
+                form.get('durability')?.touched
+              "
+            >
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Poder*</mat-label>
+            <input matInput type="number" formControlName="power" max="100"
+  maxlength="3"
+  (input)="enforceMax($event, 100)"/>
+            <mat-error
+              *ngIf="
+                form.get('power')?.hasError('required') &&
+                form.get('power')?.touched
+              "
+            >
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Combate</mat-label>
+            <input matInput type="number" formControlName="combat" max="100"
+  maxlength="3"
+  (input)="enforceMax($event, 100)"/>
+            <mat-error
+              *ngIf="
+                form.get('combat')?.hasError('required') &&
+                form.get('combat')?.touched
+              "
+            >
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button class="neon-watch-blue" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+        Volver
+      </button>
+      <button
+        class="neon-watch-blue"
+        (click)="onSubmit()"
+        color="accent"
+        [disabled]="form.invalid || (isEditMode() && !hasFormChanged())"
+      >
+        {{ isEditMode() ? "Guardar Cambios" : "Crear Héroe" }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</main>

@@ -1,14 +1,12 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { signal } from '@angular/core';
 import {
   ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick,
+  TestBed
 } from '@angular/core/testing';
-import { HeroFormComponent } from './hero-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Superhero } from '../../models/superhero.interface';
-import { signal } from '@angular/core';
+import { HeroFormComponent } from './hero-form.component';
 
 describe('HeroFormComponent', () => {
   let component: HeroFormComponent;
@@ -199,8 +197,8 @@ describe('HeroFormComponent', () => {
   });
 
   component.onSubmit();
-  expect(component.form.valid).toBeFalse(); // ✅ cubre condición
-  expect(component.formSubmit.emit).not.toHaveBeenCalled(); // ✅ cubre branch negativo
+  expect(component.form.valid).toBeFalse(); 
+  expect(component.formSubmit.emit).not.toHaveBeenCalled(); 
 });
 it('debería procesar la imagen seleccionada y actualizar el formulario', async () => {
   const fakeFile = new File(['dummy'], 'test.png', { type: 'image/png' });
@@ -291,7 +289,7 @@ it('no debería ejecutar lógica si no hay archivos seleccionados', async () => 
   const resizeSpy = spyOn(component, 'resizeImage');
   await component.onImageSelected(event);
 
-  expect(resizeSpy).not.toHaveBeenCalled(); // ✅ cubre esa rama
+  expect(resizeSpy).not.toHaveBeenCalled(); 
 });
 
 it('no debería continuar si canvas.getContext devuelve null', async () => {
@@ -350,5 +348,56 @@ it('debería manejar valores undefined en propiedades anidadas', () => {
 });
 
 
+it('debería limitar el valor del input a 100 si se excede', () => {
+  const input = document.createElement('input');
+  input.type = 'number';
+  input.setAttribute('formcontrolname', 'speed');
+  input.value = '120';
+
+  const event = new Event('input');
+  Object.defineProperty(event, 'target', { writable: false, value: input });
+
+  component.form.get('speed')?.setValue(120);
+
+  component.enforceMax(event, 100);
+
+  expect(input.value).toBe('100');
+  expect(component.form.get('speed')?.value).toBe(100);
+});
+
+it('no debería modificar el valor si es menor o igual a 100', () => {
+  const input = document.createElement('input');
+  input.type = 'number';
+  input.setAttribute('formcontrolname', 'speed');
+  input.value = '85';
+
+  const event = new Event('input');
+  Object.defineProperty(event, 'target', { writable: false, value: input });
+
+  component.form.get('speed')?.setValue(85);
+
+  component.enforceMax(event, 100);
+
+  expect(input.value).toBe('85');
+  expect(component.form.get('speed')?.value).toBe(85);
+});
+it('debería detectar campos de stats inválidos', () => {
+  component.form.get('intelligence')?.setValue(120); 
+  component.form.get('intelligence')?.markAsTouched();
+
+  expect(component.hasInvalidPowerStats()).toBeTrue();
+});
+it('debería detectar que el formulario ha cambiado', () => {
+  component['originalValue'] = component.form.getRawValue();
+
+  component.form.get('name')?.setValue('NuevoNombre');
+  expect(component.hasFormChanged()).toBeTrue();
+});
+
+it('no debería detectar cambios si el formulario es igual al original', () => {
+  const original = component.form.getRawValue();
+  component['originalValue'] = original;
+  expect(component.hasFormChanged()).toBeFalse();
+});
 
 });

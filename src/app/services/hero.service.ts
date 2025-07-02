@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { Filters, Superhero } from '../models/superhero.interface';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class HeroService {
@@ -49,7 +49,6 @@ editHero(updatedHero: Superhero): void {
       hero.id === updatedHero.id ? { ...updatedHero } : hero
     )
   );
-  console.log('heroooo', updatedHero);
 }
 
 
