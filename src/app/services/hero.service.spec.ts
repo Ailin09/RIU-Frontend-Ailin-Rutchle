@@ -80,7 +80,7 @@ describe('HeroService', () => {
     req.flush([superman, wonderWoman]);
 
     expect(service.heroes().length).toBe(2);
-    service.loadHeroes(); // no vuelve a cargar
+    service.loadHeroes();
   });
 
   it('debería agregar un héroe', () => {
